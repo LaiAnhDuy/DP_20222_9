@@ -1,3 +1,11 @@
+# Nhóm 13 - IT4536
+
+## Thành viên trong nhóm :
+* ###### Lại Anh Duy 20194036
+* ###### Trần Tuấn Anh 20193983
+* ###### Trịnh Duy Trường 20194197
+* ###### Bùi Xuân Đại 20172997
+
 #  An Internet Media Store
 <p align="center">
   <img src="src/main/resources/assets/images/aims_cover_image.png" />
