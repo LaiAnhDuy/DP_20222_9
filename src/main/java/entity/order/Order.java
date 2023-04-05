@@ -26,6 +26,10 @@ public class Order {
 
     public Order(Cart cart) {
         List<OrderItem> orderItems = new ArrayList<>();
+        /*
+         * Common coupling
+         * su dung bien cartInstance
+         */
         for (Object object : SessionInformation.cartInstance.getListMedia()) {
             CartItem cartItem = (CartItem) object;
             OrderItem orderItem = new OrderItem(cartItem.getMedia(),
@@ -33,6 +37,12 @@ public class Order {
                     cartItem.getPrice());
             orderItems.add(orderItem);
         }
+
+        /*
+         * Common coupling
+         * su dung ham unmodifiableList
+         */
+
         this.orderMediaList = Collections.unmodifiableList(orderItems);
         this.subtotal = cart.calSubtotal();
         this.tax = (int) (ViewsConfig.PERCENT_VAT/100) * subtotal;

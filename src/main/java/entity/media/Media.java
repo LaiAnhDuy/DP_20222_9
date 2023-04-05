@@ -13,7 +13,10 @@ import java.util.logging.Logger;
  * @author nguyenlm
  */
 public class Media {
-
+    /*
+     * Common coupling
+     * Su dung ham getLogger
+     */
     private static Logger LOGGER = Utils.getLogger(Media.class.getName());
 
     protected Statement stm;
@@ -28,6 +31,10 @@ public class Media {
     protected boolean rushSupported;
 
     public Media() throws SQLException {
+        /*
+        * Common coupling
+        * Su dung ham getConnection
+        */
         stm = AIMSDB.getConnection().createStatement();
     }
 

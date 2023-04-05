@@ -38,6 +38,7 @@ import views.screen.popup.PopupScreen;
 
 public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
+    // common coupling
     public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());
 
     @FXML
@@ -77,9 +78,11 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             setupFunctionality();
         } catch (IOException ex) {
             LOGGER.info(ex.getMessage());
+            // common coupling
             PopupScreen.error("Error when loading resources.");
         } catch (Exception ex) {
             LOGGER.info(ex.getMessage());
+            // common coupling
             PopupScreen.error(ex.getMessage());
         }
     }
@@ -100,6 +103,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
             this.homeItems = new ArrayList<>();
             for (Object object : medium) {
                 Media media = (Media)object;
+                // common coupling
                 MediaHandler m = new MediaHandler(ViewsConfig.HOME_MEDIA_PATH, media);
                 m.attach(this);
                 this.homeItems.add(m);
@@ -150,10 +154,11 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     public void setImage() {
         // fix image path caused by fxml
+        // common coupling
         File file1 = new File(ViewsConfig.IMAGE_PATH + "/" + "Logo.png");
         Image img1 = new Image(file1.toURI().toString());
         aimsImage.setImage(img1);
-
+        // common coupling
         File file2 = new File(ViewsConfig.IMAGE_PATH + "/" + "cart.png");
         Image img2 = new Image(file2.toURI().toString());
         cartImage.setImage(img2);
@@ -219,6 +224,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
         try {
             if (requestQuantity > media.getQuantity()) throw new MediaNotAvailableException();
+            //common coupling
             Cart cart = SessionInformation.cartInstance;
             // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
             CartItem mediaInCart = getBController().checkMediaInCart(media);

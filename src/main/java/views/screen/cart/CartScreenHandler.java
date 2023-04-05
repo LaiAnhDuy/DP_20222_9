@@ -27,6 +27,7 @@ import views.screen.popup.PopupScreen;
 import views.screen.shipping.ShippingScreenHandler;
 
 public class CartScreenHandler extends BaseScreenHandler {
+	// common coupling
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
 
 	@FXML
@@ -58,16 +59,20 @@ public class CartScreenHandler extends BaseScreenHandler {
 		try {
 			setupFunctionality();
 		} catch (IOException ex) {
+			// common coupling
 			LOGGER.info(ex.getMessage());
 			PopupScreen.error("Error when loading resources.");
+	
 		} catch (Exception ex) {
 			LOGGER.info(ex.getMessage());
+			// common coupling
 			PopupScreen.error(ex.getMessage());
 		}
 	}
 
 	protected void setupFunctionality() throws Exception {
 		// fix relative image path caused by fxml
+		// common coupling
 		File file = new File(ViewsConfig.IMAGE_PATH + "/Logo.png");
 		Image im = new Image(file.toURI().toString());
 		aimsImage.setImage(im);
@@ -106,6 +111,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 	public void requestToPlaceOrder() throws SQLException, IOException {
 		try {
 			// create placeOrderController and process the order
+			// common coupling
 			PlaceOrderController placeOrderController = new PlaceOrderController();
 			if (placeOrderController.getListCartMedia().size() == 0){
 				PopupScreen.error("You don't have anything to place");
@@ -121,6 +127,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 			Order order = placeOrderController.createOrder();
 
 			// display shipping form
+			// common coupling
 			ShippingScreenHandler shippingScreenHandler = new ShippingScreenHandler(
 					this.stage, ViewsConfig.SHIPPING_SCREEN_PATH, order);
 			shippingScreenHandler.setPreviousScreen(this);
@@ -143,13 +150,17 @@ public class CartScreenHandler extends BaseScreenHandler {
 	void updateCartAmount(){
 		// calculate subtotal and amount
 		int subtotal = getBController().getCartSubtotal();
+		// common coupling
 		int vat = (int)((ViewsConfig.PERCENT_VAT/100)*subtotal);
 		int amount = subtotal + vat;
 		LOGGER.info("amount" + amount);
 
 		// update subtotal and amount of Cart
+		// common coupling
 		labelSubtotal.setText(ViewsConfig.getCurrencyFormat(subtotal));
+		// common coupling
 		labelVAT.setText(ViewsConfig.getCurrencyFormat(vat));
+		// common coupling
 		labelAmount.setText(ViewsConfig.getCurrencyFormat(amount));
 	}
 	
@@ -165,6 +176,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 
 				// display the attribute of vboxCart media
 				CartItem cartItem = (CartItem) cm;
+				// common coupling
 				MediaHandler mediaCartScreen = new MediaHandler(ViewsConfig.CART_MEDIA_PATH, this);
 				mediaCartScreen.setCartItem(cartItem);
 

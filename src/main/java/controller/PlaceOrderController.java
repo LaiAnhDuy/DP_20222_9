@@ -32,6 +32,13 @@ public class PlaceOrderController extends BaseController {
      * This method checks the availability of product when user click PlaceOrder button
      * @throws SQLException
      */
+
+
+     /*
+      * Common coupling
+      * Lop PaymentController su dung bien global la cartInstance cua lop SessionInformation
+      */
+
     public void placeOrder() throws SQLException {
         SessionInformation.cartInstance.checkAvailabilityOfProduct();
     }
@@ -41,6 +48,13 @@ public class PlaceOrderController extends BaseController {
      * @return Order
      * @throws SQLException
      */
+
+     /*
+      * Common coupling 
+      * Lop PlaceOderController su dung bien global cartInstance cua lop SessionInformation
+      */
+    
+
     public Order createOrder() throws SQLException {
         return new Order(SessionInformation.cartInstance);
     }

@@ -26,6 +26,11 @@ public class App extends Application {
 		try {
 
 			// initialize the scene
+			/*
+			 * Common coupling
+			 * Lop App su dung bien global INTRO_SCREEN_PATH cua lop ViewConfig
+			 */
+
 			BaseScreenHandler introScreen = new IntroScreenHandler(primaryStage, ViewsConfig.INTRO_SCREEN_PATH);
 			introScreen.show();
 
@@ -48,6 +53,12 @@ public class App extends Application {
 			});
 
 			// After fade out, load actual content
+
+			/*
+			 * Common coupling
+			 * Lop App su dung thuoc tinh golbal HOME_PATH cua lop ViewConfig
+			 */
+
 			fadeOut.setOnFinished((e) -> {
 				try {
 					HomeScreenHandler homeHandler = new HomeScreenHandler(primaryStage, ViewsConfig.HOME_PATH);

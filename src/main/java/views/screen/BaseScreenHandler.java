@@ -16,6 +16,10 @@ import views.screen.popup.PopupScreen;
 
 public abstract class BaseScreenHandler extends FXMLScreenHandler {
 
+	/*
+	 * Common coupling
+	 * Su dung ham getLogger
+	 */
 	private static final Logger LOGGER = Utils.getLogger(BaseScreenHandler.class.getName());
 
 

@@ -27,6 +27,7 @@ import views.screen.ViewsConfig;
 
 public class MediaHandler extends FXMLScreenHandler {
 
+	// common coupling
 	private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
 
 	@FXML
@@ -73,6 +74,7 @@ public class MediaHandler extends FXMLScreenHandler {
 
 	private void setMediaInfo() {
 		title.setText(cartItem.getMedia().getTitle());
+		// common coupling
 		price.setText(ViewsConfig.getCurrencyFormat(cartItem.getPrice()));
 		File file = new File(cartItem.getMedia().getImageURL());
 		Image im = new Image(file.toURI().toString());
@@ -82,9 +84,11 @@ public class MediaHandler extends FXMLScreenHandler {
 		image.setFitWidth(92);
 
 		// add delete button
+		// common coupling
 		btnDelete.setFont(ViewsConfig.REGULAR_FONT);
 		btnDelete.setOnMouseClicked(e -> {
 			try {
+				// common coupling
 				SessionInformation.cartInstance.removeCartMedia(cartItem); // update user cart
 				cartScreen.updateCart(); // re-display user cart
 				LOGGER.info("Deleted " + cartItem.getMedia().getTitle() + " from the cart");

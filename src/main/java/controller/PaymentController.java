@@ -103,6 +103,10 @@ public class PaymentController extends BaseController {
 		return result;
 	}
 
+	/*
+	 * Common coupling
+	 * Su dung bien global la cartInstance
+	 */
 	public void emptyCart(){
         SessionInformation.cartInstance.emptyCart();
     }

@@ -20,6 +20,10 @@ import java.util.logging.Logger;
 public class ApplicationProgrammingInterface {
 
 	public static DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	/*
+	 * Common coupling
+	 * Su dung ham getLogger
+	 */
 	private static Logger LOGGER = Utils.getLogger(Utils.class.getName());
 
 	public static String get(String url, String token) throws Exception {

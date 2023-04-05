@@ -21,6 +21,10 @@ public class CDDAO extends MediaDAO {
                 "ON Media.id = CD.id " +
                 "where Media.id = " + id + ";";
 
+        /*
+         * Common coupling
+         * Su dung ham getConnection
+         */
         ResultSet res = AIMSDB.getConnection().createStatement().executeQuery(sql);
         if(res.next()) {
 

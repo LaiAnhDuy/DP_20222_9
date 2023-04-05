@@ -17,6 +17,11 @@ public class BaseController {
      * @param media
      * @return CartMedia or null
      */
+
+    /*
+     * Common coupling
+     * Su dung bien golbal cartInstance
+     */
     public CartItem checkMediaInCart(Media media){
         return SessionInformation.cartInstance.checkMediaInCart(media);
     }
@@ -25,6 +30,12 @@ public class BaseController {
      * This method gets the list of items in cart
      * @return List[CartMedia]
      */
+
+    /*
+     * Common coupling
+     * Su dung bien golbal cartInstance
+     */
+    
     public List getListCartMedia(){
         return SessionInformation.cartInstance.getListMedia();
     }
