@@ -1,4 +1,4 @@
-# Nhóm 13 - IT4536
+# Nhóm 9 - IT4536
 
 ## Thành viên trong nhóm :
 * ###### Lại Anh Duy 20194036
