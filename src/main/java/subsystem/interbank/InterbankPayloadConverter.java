@@ -100,6 +100,10 @@ public class InterbankPayloadConverter {
     private MyMap convertJSONResponse(String responseText) {
         MyMap response = null;
         try {
+
+                // Common coupling
+                // Su dung ham toMyMap
+
             response = MyMap.toMyMap(responseText, 0);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();

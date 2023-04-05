@@ -17,6 +17,10 @@ public class UserDAO {
     public User authenticate(String email, String encryptedPassword) throws SQLException {
         String sql = "SELECT * FROM User " +
                 "where email = '" + email + "' and encrypted_password = '" + encryptedPassword + "'";
+
+                // Common coupling
+                // Su dung ham getConnection
+                
         ResultSet res =  AIMSDB.getConnection().createStatement().executeQuery(sql);
         if(res.next()) {
             return new User(

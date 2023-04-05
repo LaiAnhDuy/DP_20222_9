@@ -29,12 +29,16 @@ public class AuthenticationController extends BaseController {
         }
     }
 
+        // Common coupling
+        // su dung bien global mainUser, expiredTime
     public User getMainUser() throws ExpiredSessionException {
         if (SessionInformation.mainUser == null || SessionInformation.expiredTime == null || SessionInformation.expiredTime.isBefore(LocalDateTime.now())) {
             logout();
             throw new ExpiredSessionException();
         } else return SessionInformation.mainUser.cloneInformation();
     }
+        // Common coupling
+        // su dung bien global mainUser, expiredTime
 
     public void login(String email, String password) throws Exception {
         try {
@@ -47,6 +51,9 @@ public class AuthenticationController extends BaseController {
         }
     }
 
+            // Common coupling
+            // su dung bien global mainUser, expiredTime
+            
     public void logout() {
         SessionInformation.mainUser = null;
         SessionInformation.expiredTime = null;

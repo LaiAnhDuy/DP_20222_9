@@ -10,6 +10,9 @@ import utils.*;
 
 public class AIMSDB {
 
+            //  Common coupling
+            //  Su dung ham getLogger
+
 	private static Logger LOGGER = Utils.getLogger(Connection.class.getName());
 	private static Connection connect;
 	// TODO: refactor Utils -> limit connections

@@ -8,6 +8,10 @@ public class InterbankBoundary {
 	String query(String url, String data) {
 		String response = null;
 		try {
+
+				// Common coupling
+				// su dung ham post
+
 			response = ApplicationProgrammingInterface.post(url, data);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
