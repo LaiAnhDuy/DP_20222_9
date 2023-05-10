@@ -22,6 +22,8 @@ public class BaseController {
      * Common coupling
      * Su dung bien golbal cartInstance
      */
+
+     //Communicational Cohesion vì chúng đều sử dụng dữ liệu trong entity cart
     public CartItem checkMediaInCart(Media media){
         return SessionInformation.cartInstance.checkMediaInCart(media);
     }
