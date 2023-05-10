@@ -18,7 +18,9 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 public class ApplicationProgrammingInterface {
-
+	
+	// Communicational cohesion do các thành phần trong module trao đổi thông tin với nhau. Cụ thể là
+	// get sử dụng setupConnection(url)
 	public static DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
 		// Common coupling

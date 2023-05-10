@@ -27,6 +27,7 @@ import views.screen.ViewsConfig;
 
 public class MediaHandler extends FXMLScreenHandler {
 
+	// Functional cohesion
 	private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
 
 	@FXML
