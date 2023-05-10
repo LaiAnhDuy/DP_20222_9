@@ -103,6 +103,7 @@ public class Book extends Media {
         return this;
     }
 
+    // Coincidential cohesion do Phương thức này không liên quan đến class, nó cần pahir được cài trong lowps ui hợp hơn
     @Override
     public String toString() {
         String basicInformation = "{" +

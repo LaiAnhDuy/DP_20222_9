@@ -18,6 +18,7 @@ public class CartItem {
         this.price = price;
     }
     
+    // Communicational cohesion do tất cả các phương thức getter chi cùng thao tác trên một cơ sở dữ liệu, chúng không có liên quan các tính năng với nhau
     public Media getMedia() {
         return this.media;
     }

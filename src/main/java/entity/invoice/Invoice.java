@@ -16,6 +16,7 @@ public class Invoice {
         this.amount = order.getTotal();
     }
 
+    // Coincidential cohesion do phương thức getOrder không liên quan đến lớp và các phương thức
     public Order getOrder() {
         return order;
     }
