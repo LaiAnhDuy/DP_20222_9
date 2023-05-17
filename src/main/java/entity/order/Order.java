@@ -17,6 +17,8 @@ public class Order {
     private int tax;
     private List orderMediaList;
     protected DeliveryInfo deliveryInfo;
+    // DIP: Ở đây nên tạo DeliveryInfoIml (interface) để Order phụ thuộc vào, còn DeliveryInfo implements
+    // DeliveryInfoIml. Như vậy sẽ đảm bảo nếu khi cần thay đổi sẽ không bị ảnh hưởng quá nhiều
 
     // lớp này có functional cohesion do các phương thức có liên quan đến nhau, chúng t=cùng thực hiện một nhiện vụ thieest lập cho lớp
     public Order() {
