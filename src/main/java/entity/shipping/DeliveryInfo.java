@@ -21,6 +21,9 @@ public class DeliveryInfo {
         this.distanceCalculator = distanceCalculator;
     }
 
+    /*
+     * Khi thay đổi cách tính toán ship theo khoảng cách hoặc bonus thêm phí thì phải sửa trực tiếp vào class
+     */
     public int calculateShippingFee(Order order) {
         int distance = distanceCalculator.calculateDistance(address, province);
         return (int) (distance * 1.2);

@@ -26,6 +26,11 @@ import subsystem.InterbankSubsystem;
  //Functional Cohesion vì các method trong class này làm việc cùng nhau và đều nhằm mục đích xử lý logic Place Order
 public class PaymentController extends BaseController {
 
+
+	/*
+	 * SOLID_OCP: vì khi thêm một phương thức thanh toán mới thì cần phải sửa code
+	 */
+
 	/**
 	 * Represent the card used for payment
 	 */

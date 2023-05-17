@@ -7,6 +7,10 @@ import java.util.List;
 import common.exception.MediaNotAvailableException;
 import entity.media.Media;
 
+/*
+ * SRP: Vừa phải quản lý giỏ hàng vừa phải có phương thức tính toán, check giỏ hàng, thêm, xóa,... đơn hàng
+ */
+
 public class Cart {
     
     private List<CartItem> lstCartItem;

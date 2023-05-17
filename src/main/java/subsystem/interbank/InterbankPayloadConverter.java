@@ -48,6 +48,11 @@ public class InterbankPayloadConverter {
      * @param responseText
      * @return
      */
+    /*
+     * OCP: khi cần thêm một phương thức hoặc thay đổi phguowng thức thanh toán thì cần sửa trực tiếp vào trong code
+     */
+
+
     PaymentTransaction extractPaymentTransaction(String responseText) {
         MyMap response = convertJSONResponse(responseText);
 

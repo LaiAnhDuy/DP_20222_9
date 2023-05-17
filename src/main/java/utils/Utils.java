@@ -15,6 +15,10 @@ import java.util.logging.Logger;
  */
 public class Utils {
 
+	/*
+	 * SRP: Phương thức DATE_FORMATTER không liên quan đến các phương thức còn lại trong class
+	 */
+
 	public static DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	private static Logger LOGGER = getLogger(Utils.class.getName());
 	static {

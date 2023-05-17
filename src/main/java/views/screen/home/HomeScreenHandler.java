@@ -35,7 +35,9 @@ import views.screen.ViewsConfig;
 import views.screen.cart.CartScreenHandler;
 import views.screen.popup.PopupScreen;
 
-
+/*
+ * SRP: màn hình thực hiện nhiều chức năng: điều khiển màn hình, xửa lý dữ liệu liên quan đến giỏ hàng
+ */
 public class HomeScreenHandler extends BaseScreenHandler implements Observer {
 
     // common coupling

@@ -26,9 +26,11 @@ import java.util.regex.Pattern;
  //Functional Cohesion vì các method trong class này làm việc cùng nhau và đều nhằm mục đích xử lý logic Place Order
 public class PlaceOrderController extends BaseController {
 
-    /**
-     * Just for logging purpose
+   
+    /*
+     * SRP: vì vừa phải khai báo trường vừa phải điều khiển trường dữ liệu
      */
+
     private static Logger LOGGER = utils.Utils.getLogger(PlaceOrderController.class.getName());
 
     /**
@@ -57,6 +59,8 @@ public class PlaceOrderController extends BaseController {
       * Lop PlaceOderController su dung bien global cartInstance cua lop SessionInformation
       */
     
+    
+
 
     public Order createOrder() throws SQLException {
         return new Order(SessionInformation.cartInstance);
@@ -77,6 +81,12 @@ public class PlaceOrderController extends BaseController {
      * @throws InterruptedException
      * @throws IOException
      */
+
+     /*
+     * OCP vì khi thêm một trường nào đó cần xác thực thì cần thay đổi code hoặc tách ra một class mới
+    
+    */  
+
     public DeliveryInfo processDeliveryInfo(HashMap info) throws InterruptedException, IOException, InvalidDeliveryInfoException {
         LOGGER.info("Process Delivery Info");
         LOGGER.info(info.toString());
